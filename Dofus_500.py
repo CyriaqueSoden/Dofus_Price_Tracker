@@ -1,8 +1,4 @@
-from importlib.resources import path
-from tkinter import N
-from traceback import print_tb
 import mysql.connector
-from pydoc import cli
 from PIL import Image
 from pyautogui import *
 import pyautogui
@@ -25,8 +21,8 @@ mycursor = mydb.cursor()
 
 dataKamas = []
 regionScreen = [336, 400, 465]
-listName = ['galet bistre', 'galet saisonnier',
-            'aile de bourdard', 'ailes de scarafeuille vert']
+listName = ['galet rutilant', 'galet brasillant',
+            'dolomite', 'substrat de foret', 'substrat du bosquet', 'saphir', 'diamant']
 
 noSpaceListName = []
 
@@ -47,8 +43,12 @@ def screenShot(nb, y, i):
     pathImg = r'C:\Users\maste\Pictures\bot\screen' + str(i) + str(nb) + '.png'
     im.save(pathImg)
     time.sleep(0.5)
-    dataKamas.append(pytesseract.image_to_string(
-        Image.open(pathImg)).replace(" ", ""))
+    analyse = pytesseract.image_to_string(
+        Image.open(pathImg)).replace(" ", "")
+    if analyse == "":
+        dataKamas.append("0")
+    else:
+        dataKamas.append(analyse)
     if os.path.exists(pathImg):
         os.remove(pathImg)
 
