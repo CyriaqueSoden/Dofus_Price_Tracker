@@ -1,6 +1,7 @@
+from screeninfo import get_monitors
 import csv
 import mysql.connector
-from Dofus_500 import *
+import pyautogui
 
 mydb = mysql.connector.connect(
     host="localhost",
@@ -10,9 +11,5 @@ mydb = mysql.connector.connect(
 )
 mycursor = mydb.cursor()
 
-
-clicks = {"ini": (116, 8), "croixDelete": (730, 255), "barreDeRecherche": (
-    538, 248), "openItem": (913, 284), "KamasLoadItem": (1030, 276)}
-
-for i in clicks:
-    print(clicks[i])
+while not 1 == 2:
+    print(pyautogui.displayMousePosition())

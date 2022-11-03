@@ -20,7 +20,8 @@ def click(x, y):
 
 
 def screenShot(nb, y, i):
-    im = pyautogui.screenshot(region=(1250, y, 122, 32))
+    im = pyautogui.screenshot(
+        region=(*listRegion[y].coordinates, *dimensionScreen.coordinates))
     pathImg = r'C:\Users\maste\Pictures\bot\screen' + str(i) + str(nb) + '.png'
     im.save(pathImg)
     while not os.path.exists(pathImg):
@@ -42,7 +43,7 @@ def uploadData(i):
 
 
 def didItemLoad():
-    while not pyautogui.pixel(*listCoo["KamasLoadItem"].coordinates)[0] == 83:
+    while color == pyautogui.pixel(*listCoo["KamasLoadItem"].coordinates)[0]:
         count = + 1
         time.sleep(0.2)
         if count > 20:
@@ -57,11 +58,12 @@ if __name__ == "__main__":
         click(*listCoo["ini"].coordinates)
         click(*listCoo["croixDelete"].coordinates)
         click(*listCoo["barreDeRecherche"].coordinates)
+        color = pyautogui.pixel(*listCoo["KamasLoadItem"].coordinates)[0]
         keyboard.write(i)
         didItemLoad()
         click(*listCoo["openItem"].coordinates)
         time.sleep(0.1)
-        for idy, y in enumerate(regionScreen):
+        for idy, y in enumerate(listRegion):
             screenShot(idy, y, idi)
         uploadData(idi)
         click(*listCoo["croixDelete"].coordinates)

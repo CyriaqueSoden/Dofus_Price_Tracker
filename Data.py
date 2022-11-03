@@ -10,8 +10,10 @@ mydb = mysql.connector.connect(
 )
 mycursor = mydb.cursor()
 
+color = 0
+
 dataKamas = []
-regionScreen = [336, 400, 465]
+regionScreen = {"1": 336, "10": 400, "100": 465}
 listName = ['galet rutilant', 'galet brasillant',
             'dolomite', 'substrat de bosquet', 'saphir', 'diamant']
 
@@ -22,11 +24,13 @@ for i in listName:
 
 listCoo = {}
 listRegion = {}
-clicks = {"ini": (116, 8), "croixDelete": (730, 255), "barreDeRecherche": (
+clicks = {"ini": (116, 8), "croixDelete": (666, 255), "barreDeRecherche": (
     538, 248), "openItem": (913, 284), "KamasLoadItem": (1030, 276)}
 
 for i in clicks:
     listCoo[i] = co.Coordinate(clicks[i][0], clicks[i][1])
 
 for i in regionScreen:
-    listRegion[i] = co.Coordinate(1250, i)
+    listRegion[i] = co.Coordinate(1250, regionScreen[i])
+
+dimensionScreen = co.Coordinate(122, 32)
