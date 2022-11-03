@@ -10,5 +10,9 @@ mydb = mysql.connector.connect(
 )
 mycursor = mydb.cursor()
 
-mycursor.execute(
-    "SELECT * FROM item_price WHERE name = '" + noSpaceListName[0] + "'")
+
+clicks = {"ini": (116, 8), "croixDelete": (730, 255), "barreDeRecherche": (
+    538, 248), "openItem": (913, 284), "KamasLoadItem": (1030, 276)}
+
+for i in clicks:
+    print(clicks[i])
