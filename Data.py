@@ -16,12 +16,10 @@ if multiX == 2560 and multiY == 1440:
 elif multiX == 1920 and multiY == 1200:
     regionScreen = {"1": 279, "10": 337, "100": 385}
     clicks = {"ini": (116, 8), "croixDelete": (502, 209), "barreDeRecherche": (
-        362, 208), "openItem": (850, 237), "KamasLoadItem": (850, 237)}
+        362, 208), "openItem": (611, 222), "KamasLoadItem": (850, 237)}
     dimensionScreen = co.Coordinate(112, 28)
+    dimensionScreen2 = co.Coordinate(255, 33)
 
-else:
-    print(multiX)
-    print(multiY)
 
 
 mydb = mysql.connector.connect(
@@ -58,3 +56,4 @@ for i in regionScreen:
         listRegion[i] = co.Coordinate(1250, regionScreen[i])
     else:
         listRegion[i] = co.Coordinate(922, regionScreen[i])
++55
