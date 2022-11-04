@@ -1,4 +1,4 @@
-from Data import *
+from data import *
 from PIL import Image
 from pyautogui import *
 import pyautogui
