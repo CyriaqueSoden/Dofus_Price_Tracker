@@ -1,3 +1,6 @@
+from screeninfo import get_monitors
+multiX = get_monitors()[0].width
+multiY = get_monitors()[0].height
 
 
 class Coordinate:
@@ -9,7 +12,10 @@ class Coordinate:
         self.defY = self.y
 
     def next(self):
-        self.y += 55
+        if multiX == 2560 and multiY == 1440:
+            self.y += 66
+        else:
+            self.y += 55
 
     def getCoordinates(self):
         return (self.x, self.y)

@@ -63,14 +63,12 @@ def isItRightItem(i):
             time.sleep(0.2)
         analyse = pytesseract.image_to_string(Image.open(pathImg))
         time.sleep(0.1)
-        print(analyse.lower())
-        print(listCoo["openItem"].getCoordinates())
         if analyse.lower().strip() == i.lower().strip():
             return
         else:
             listCoo["openItem"].next()
-            # for i in listRegion:
-            #     listRegion[i].next()
+            for y in listRegion:
+                listRegion[y].next()
 
 
 if __name__ == "__main__":
