@@ -1,16 +1,16 @@
+from PIL import Image
 from screeninfo import get_monitors
 import csv
-import mysql.connector
 import pyautogui
 import pipreqs
-
-mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="",
-    database="dofus_500"
-)
-mycursor = mydb.cursor()
+import pytesseract
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
 
-print(pipreqs.__path__)
+pathImg = r'C:\Users\maste\Pictures\bot\screen00.png'
+
+analyse = pytesseract.image_to_string(
+    Image.open(pathImg)).replace(" ", "")
+
+
+print(analyse)

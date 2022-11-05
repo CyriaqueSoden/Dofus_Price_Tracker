@@ -29,9 +29,7 @@ count = 0
 color = 0
 
 dataKamas = []
-listName = ['galet rutilant', 'galet brasillant',
-            'dolomite', 'substrat de bosquet', 'saphir', 'diamant']
-
+listName = ['diamant']
 
 noSpaceListName = []
 # creation noSpaceListName
