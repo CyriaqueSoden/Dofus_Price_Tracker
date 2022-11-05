@@ -2,6 +2,7 @@ from screeninfo import get_monitors
 import csv
 import mysql.connector
 import pyautogui
+import pipreqs
 
 mydb = mysql.connector.connect(
     host="localhost",
@@ -11,5 +12,5 @@ mydb = mysql.connector.connect(
 )
 mycursor = mydb.cursor()
 
-while not 1 == 2:
-    print(pyautogui.displayMousePosition())
+
+print(pipreqs.__path__)

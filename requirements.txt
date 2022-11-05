@@ -1,0 +1,8 @@
+keyboard==0.13.5
+mysql_connector_repackaged==0.3.1
+Pillow==9.3.0
+pipreqs==0.4.11
+PyAutoGUI==0.9.53
+pytesseract==0.3.10
+pywin32==304
+screeninfo==0.8.1
