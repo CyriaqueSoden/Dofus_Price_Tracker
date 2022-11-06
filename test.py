@@ -1,3 +1,4 @@
+import time
 from PIL import Image
 from screeninfo import get_monitors
 import csv
@@ -7,10 +8,9 @@ import pytesseract
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
 
-pathImg = r'C:\Users\maste\Pictures\bot\screen00.png'
+time.sleep(5)
+im = pyautogui.screenshot(region=(500, 500, 10, 10))
+im2 = pyautogui.screenshot(region=(600, 600, 10, 10))
 
-analyse = pytesseract.image_to_string(
-    Image.open(pathImg)).replace(" ", "")
-
-
-print(analyse)
+if im == im2:
+    print("okkk")

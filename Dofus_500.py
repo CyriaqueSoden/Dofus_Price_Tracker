@@ -19,22 +19,15 @@ def click(x, y):
     time.sleep(0.1)
 
 
-def screenShot(nb, y, i):
+def screenShot(y):
     im = pyautogui.screenshot(
         region=(*listRegion[y].getCoordinates(), *dimensionScreen.getCoordinates()))
-    pathImg = r'C:\Users\maste\Pictures\bot\screen' + str(i) + str(nb) + '.png'
-    im.save(pathImg)
-    while not os.path.exists(pathImg):
-        time.sleep(0.01)
-    analyse = pytesseract.image_to_string(
-        Image.open(pathImg)).replace(" ", "")
-    time.sleep(0.1)
+    im.save(r'C:\Users\maste\Pictures\bot\scsc' + y + '.png')
+    analyse = pytesseract.image_to_string(im).replace(" ", "")
     if analyse == "":
-        dataKamas.append("0")
+        dataKamas.append("1")
     else:
         dataKamas.append(analyse)
-    # if os.path.exists(pathImg):
-    #     os.remove(pathImg)
 
 
 def uploadData(i):
@@ -42,28 +35,19 @@ def uploadData(i):
                      dataKamas[0] + "," + dataKamas[1] + "," + dataKamas[2] + ")")
 
 
-def didItemLoad(where):
-    while color == pyautogui.pixel(*where)[0]:
-        count = + 1
-        time.sleep(0.01)
-        if count > 20000:
-            return
-    else:
-        time.sleep(0.1)
-        print(color)
-        return
+def didItemLoad(what, dim):
+    analyse = ""
+    while analyse == "":
+        im = pyautogui.screenshot(
+            region=(*what, *dim))
+        analyse = pytesseract.image_to_string(im)
 
 
 def isItRightItem(i):
     while True:
         im = pyautogui.screenshot(
             region=(*listCoo["openItem"].getCoordinates(), *dimensionScreen2.getCoordinates()))
-        pathImg = r'C:\Users\maste\Pictures\bot\verif.png'
-        im.save(pathImg)
-        while not os.path.exists(pathImg):
-            time.sleep(0.01)
-        analyse = pytesseract.image_to_string(Image.open(pathImg))
-        time.sleep(0.1)
+        analyse = pytesseract.image_to_string(im)
         if analyse.lower().strip() == i.lower().strip():
             return
         else:
@@ -77,16 +61,15 @@ if __name__ == "__main__":
         click(*listCoo["ini"].getCoordinates())
         click(*listCoo["croixDelete"].getCoordinates())
         click(*listCoo["barreDeRecherche"].getCoordinates())
-        color = pyautogui.pixel(*listCoo["KamasLoadItem"].getCoordinates())[0]
         keyboard.write(i)
-        didItemLoad(listCoo["KamasLoadItem"].getCoordinates())
+        didItemLoad(listCoo["openItem"].getCoordinates(),
+                    dimensionScreen2.getCoordinates())
         isItRightItem(i)
-        color = pyautogui.pixel(*listRegion["1"].getCoordinates())[0]
-        print(color)
         click(*listCoo["openItem"].getCoordinates())
-        didItemLoad(listRegion["1"].getCoordinates())
+        didItemLoad(listRegion["1"].getCoordinates(),
+                    dimensionScreen.getCoordinates())
         for idy, y in enumerate(listRegion):
-            screenShot(idy, y, idi)
+            screenShot(y)
         uploadData(idi)
         click(*listCoo["croixDelete"].getCoordinates())
         for n in range(len(dataKamas)):
