@@ -7,16 +7,16 @@ if co.multiX == 2560 and co.multiY == 1440:
         1250, 465), "lot1": (1087, 333), "lot10": (1087, 399), "lot100": (1087, 465)}
     clicks = {"ini": (116, 8), "croixDelete": (730, 255), "barreDeRecherche": (
         538, 248), "openItem": (860, 273)}
-    dimensionScreen = co.Coordinate(122, 32)
-    dimensionScreen2 = co.Coordinate(315, 36)
-    dimensionScreen3 = co.Coordinate(111, 42)
+    dimensionScreenPrix = co.Coordinate(122, 32)
+    dimensionScreenNom = co.Coordinate(315, 36)
+    dimensionScreenItemLoad = co.Coordinate(111, 42)
 
 elif co.multiX == 1920 and co.multiY == 1200:
-    regionScreen = {"1": 279, "10": 337, "100": 385}
+    regionScreen = {"1": (922, 279), "10": (922, 337), "100": (922, 385)}
     clicks = {"ini": (116, 8), "croixDelete": (502, 209), "barreDeRecherche": (
         362, 208), "openItem": (611, 222)}
-    dimensionScreen = co.Coordinate(112, 28)
-    dimensionScreen2 = co.Coordinate(255, 33)
+    dimensionScreenPrix = co.Coordinate(112, 28)
+    dimensionScreenNom = co.Coordinate(255, 33)
 
 
 mydb = mysql.connector.connect(
@@ -30,13 +30,17 @@ mycursor = mydb.cursor()
 count = 0
 color = 0
 
+
 dataKamas = []
-listName = ['diamant', 'saphir']
-# 'galet brasillant'
+listName = [
+    'rune ré per eau', 'rune ré per feu', 'rune ré per air', 'rune sa']
+
 noSpaceListName = []
 # creation noSpaceListName
 for i in listName:
     noSpaceListName.append(i.replace(" ", "_"))
+
+[i.strip() for i in listName]
 
 
 listCoo = {}
@@ -48,4 +52,4 @@ for i in clicks:
 listRegion = {}
 # creation listRegion
 for i in regionScreen:
-    listRegion[i] = co.Coordinate(clicks[i][0], regionScreen[i])
+    listRegion[i] = co.Coordinate(regionScreen[i][0], regionScreen[i][1])
