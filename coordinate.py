@@ -20,9 +20,9 @@ class Coordinate:
     def getCoordinates(self):
         return (self.x, self.y)
 
+    def getRegOcrNumber(self):
+        return (self.x + 10, self.y + 10)
+
     def reset(self):
         self.x = self.defX
         self.y = self.defY
-
-    def __repr__(self):
-        return (self.x, self.y)

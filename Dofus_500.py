@@ -46,7 +46,12 @@ def didItemLoad(what, dim):
         time.sleep(0.05)
         count = + 1
         if count > 200:
-            continue
+            return False
+
+
+def whatNumber():
+    im = pyautogui.screenshot(
+        region=(*listCoo["openItem"].getCoordinates(), *dimensionScreenNom.getCoordinates()))
 
 
 def isItRightItem(i):
@@ -75,14 +80,16 @@ if __name__ == "__main__":
         click(*listCoo["croixDelete"].getCoordinates())
         click(*listCoo["barreDeRecherche"].getCoordinates())
         keyboard.write(i)
-        didItemLoad(listCoo["openItem"].getCoordinates(),
-                    dimensionScreenNom.getCoordinates())
+        if didItemLoad(listCoo["openItem"].getCoordinates(),
+                       dimensionScreenNom.getCoordinates()) == False:
+            continue
         print('test')
         if isItRightItem(i) == False:
             continue
         click(*listCoo["openItem"].getCoordinates())
-        didItemLoad(listRegion["1"].getCoordinates(),
-                    dimensionScreenPrix.getCoordinates())
+        if didItemLoad(listRegion["1"].getCoordinates(),
+                       dimensionScreenPrix.getCoordinates()) == False:
+            continue
         for idy, y in enumerate(listRegion):
             screenShot(y)
         uploadData(idi)
