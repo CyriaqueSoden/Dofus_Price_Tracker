@@ -4,12 +4,11 @@ import coordinate as co
 
 if co.multiX == 2560 and co.multiY == 1440:
     regionScreen = {"1": (1250, 336), "10": (1250, 400), "100": (
-        1250, 465), "lot1": (1087, 333), "lot10": (1087, 399), "lot100": (1087, 465)}
+        1250, 465)}
     clicks = {"ini": (116, 8), "croixDelete": (730, 255), "barreDeRecherche": (
         538, 248), "openItem": (860, 273)}
     dimensionScreenPrix = co.Coordinate(122, 32)
     dimensionScreenNom = co.Coordinate(315, 36)
-    dimensionScreenItemLoad = co.Coordinate(111, 42)
 
 elif co.multiX == 1920 and co.multiY == 1200:
     regionScreen = {"1": (922, 279), "10": (922, 337), "100": (922, 385)}
@@ -32,8 +31,7 @@ color = 0
 
 
 dataKamas = []
-listName = [
-    'rune ré per eau', 'rune ré per feu', 'rune ré per air', 'rune sa']
+listName = ['Frostiz', 'Poisskaille Givré', 'Moustache de Klime']
 
 noSpaceListName = []
 # creation noSpaceListName

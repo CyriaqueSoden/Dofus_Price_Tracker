@@ -11,6 +11,5 @@ pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tessera
 analyse = pytesseract.image_to_string(
     r'C:\Users\maste\Pictures\bot\scsc100.Png').replace(" ", "")
 
-print(analyse)
-
-re.sub("[^0-9]", "", "aeeaz999,")
+test = re.sub(r"\D", "", "sdkjh987978asd098as0980a98sd")
+print(test)

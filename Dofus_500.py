@@ -1,3 +1,4 @@
+import re
 from data import *
 from PIL import Image
 from pyautogui import *
@@ -20,6 +21,9 @@ def click(x, y):
 
 
 def screenShot(y):
+    if whatNumber(y) != y:
+        dataKamas.append("0")
+        return
     im = pyautogui.screenshot(
         region=(*listRegion[y].getCoordinates(), *dimensionScreenPrix.getCoordinates()))
     im.save(r'C:\Users\maste\Pictures\bot\scsc' + y + '.png')
@@ -28,7 +32,6 @@ def screenShot(y):
         dataKamas.append("1")
     else:
         dataKamas.append(analyse)
-        print(analyse)
 
 
 def uploadData(i):
@@ -49,9 +52,13 @@ def didItemLoad(what, dim):
             return False
 
 
-def whatNumber():
+def whatNumber(i):
     im = pyautogui.screenshot(
-        region=(*listCoo["openItem"].getCoordinates(), *dimensionScreenNom.getCoordinates()))
+        region=(*listRegion[i].getRegOcrNumber(), *dimensionScreenPrix.getCoordinates()))
+    analyse = pytesseract.image_to_string(im)
+    print(listRegion[i].getRegOcrNumber())
+    analysePost = re.sub(r"\D", "", analyse)
+    return str(analysePost)
 
 
 def isItRightItem(i):
@@ -83,7 +90,6 @@ if __name__ == "__main__":
         if didItemLoad(listCoo["openItem"].getCoordinates(),
                        dimensionScreenNom.getCoordinates()) == False:
             continue
-        print('test')
         if isItRightItem(i) == False:
             continue
         click(*listCoo["openItem"].getCoordinates())
