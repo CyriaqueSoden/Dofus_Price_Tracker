@@ -10,6 +10,6 @@ mydb = mysql.connector.connect(
 
 mycursor = mydb.cursor()
 
-mycursor.execute("DROP TABLE item_price")
+mycursor.execute("DROP TABLE item_prices")
 mycursor.execute(
-    "CREATE TABLE item_price (name varchar(255) ,price1 int , price10 int , price100 int ,date_registered TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP)")
+    "CREATE TABLE item_prices (name varchar(255) ,price1 int , price10 int , price100 int ,date_registered TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP)")

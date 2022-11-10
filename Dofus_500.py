@@ -35,7 +35,7 @@ def screenShot(y):
 
 
 def uploadData(i):
-    mycursor.execute("INSERT INTO item_price (name ,price1 ,price10 ,price100 ) VALUES ('" + noSpaceListName[i] + "'," +
+    mycursor.execute("INSERT INTO item_prices (name ,price1 ,price10 ,price100 ) VALUES ('" + noSpaceListName[i] + "'," +
                      dataKamas[0] + "," + dataKamas[1] + "," + dataKamas[2] + ")")
 
 
