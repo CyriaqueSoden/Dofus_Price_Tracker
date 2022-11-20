@@ -35,7 +35,7 @@ def screenShot(y):
 
 
 def uploadData(i):
-    mycursor.execute("INSERT INTO item_price (name ,price1 ,price10 ,price100 ) VALUES ('" + noSpaceListName[i] + "'," +
+    mycursor.execute("INSERT INTO item_prices (name ,price1 ,price10 ,price100 ) VALUES ('" + noSpaceListName[i] + "'," +
                      dataKamas[0] + "," + dataKamas[1] + "," + dataKamas[2] + ")")
 
 
@@ -56,7 +56,6 @@ def whatNumber(i):
     im = pyautogui.screenshot(
         region=(*listRegion[i].getRegOcrNumber(), *dimensionScreenPrix.getCoordinates()))
     analyse = pytesseract.image_to_string(im)
-    print(listRegion[i].getRegOcrNumber())
     analysePost = re.sub(r"\D", "", analyse)
     return str(analysePost)
 

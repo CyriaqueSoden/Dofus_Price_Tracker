@@ -31,7 +31,7 @@ color = 0
 
 
 dataKamas = []
-listName = ['Frostiz', 'Poisskaille Givré', 'Moustache de Klime']
+listName = ['Ailes de Moskito', 'Aile de Bourdard', ]
 
 noSpaceListName = []
 # creation noSpaceListName
