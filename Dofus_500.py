@@ -73,11 +73,10 @@ def isItRightItem(i):
         analyse = pytesseract.image_to_string(im)
         if analyse.lower().strip() == i.lower().strip():
             return
-        else:
-            listCoo["openItem"].next()
-            for y in listRegion:
-                listRegion[y].next()
-            count += 1
+        listCoo["openItem"].next()
+        for y in listRegion:
+            listRegion[y].next()
+        count += 1
 
 
 if __name__ == "__main__":
@@ -86,19 +85,15 @@ if __name__ == "__main__":
         click(*listCoo["croixDelete"].getCoordinates())
         click(*listCoo["barreDeRecherche"].getCoordinates())
         keyboard.write(i)
-        if didItemLoad(listCoo["openItem"].getCoordinates(),
-                       dimensionScreenNom.getCoordinates()) == False:
-            continue
-        if isItRightItem(i) == False:
-            continue
+        didItemLoad(listCoo["openItem"].getCoordinates(),
+                       dimensionScreenNom.getCoordinates())
+        isItRightItem(i)
         click(*listCoo["openItem"].getCoordinates())
-        if didItemLoad(listRegion["1"].getCoordinates(),
-                       dimensionScreenPrix.getCoordinates()) == False:
-            continue
+        didItemLoad(listRegion["1"].getCoordinates(),
+                       dimensionScreenPrix.getCoordinates())
         for idy, y in enumerate(listRegion):
             screenShot(y)
         uploadData(idi)
         click(*listCoo["croixDelete"].getCoordinates())
-        for n in range(len(dataKamas)):
-            dataKamas = []
+        dataKamas.clear()
         listCoo["openItem"].reset()
