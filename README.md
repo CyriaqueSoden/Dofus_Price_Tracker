@@ -7,8 +7,11 @@ fait des graphique sur la fluctuation du prix au cours du temps
 
 Mise en place : 
 -Crée une base de donnée mySQL
+
 -DL les requirements de requirements.txt
+
 -DL Pytesseract (https://pypi.org/project/pytesseract/)
+
 -Dans data.py changer 
 
       mydb = mysql.connector.connect(
@@ -19,12 +22,15 @@ Mise en place :
       )
       
 -Lancer le fichier db.py
+
 -Dans data.py ajouter les items qu'on veut traquer dans 
 
 listName = ['Ailes de Moskito', 'Aile de Bourdard', ]
 
 -Prier que les coordonnées soit les memes sur son pc 
+
 -Ouvrir un hotel de vente en pleine écran 
+
 -Lancer Dofus_500.py
 
 Coordonnées :
