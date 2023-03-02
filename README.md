@@ -6,6 +6,7 @@ C'est un script qui permet de stocker dans une base de donnée les prix des item
 fait des graphique sur la fluctuation du prix au cours du temps 
 
 Mise en place : 
+
 -Crée une base de donnée mySQL
 
 -DL les requirements de requirements.txt
