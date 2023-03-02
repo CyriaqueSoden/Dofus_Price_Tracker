@@ -27,6 +27,8 @@ Mise en place :
 
 listName = ['Ailes de Moskito', 'Aile de Bourdard', ]
 
+(ne pas mettre d'accents ou de caracteres speciaux)
+
 -Prier que les coordonnées soit les memes sur son pc 
 
 -Ouvrir un hotel de vente en pleine écran 
