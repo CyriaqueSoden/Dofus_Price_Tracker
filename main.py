@@ -86,11 +86,11 @@ if __name__ == "__main__":
         click(*listCoo["barreDeRecherche"].getCoordinates())
         keyboard.write(i)
         didItemLoad(listCoo["openItem"].getCoordinates(),
-                       dimensionScreenNom.getCoordinates())
+                    dimensionScreenNom.getCoordinates())
         isItRightItem(i)
         click(*listCoo["openItem"].getCoordinates())
         didItemLoad(listRegion["1"].getCoordinates(),
-                       dimensionScreenPrix.getCoordinates())
+                    dimensionScreenPrix.getCoordinates())
         for idy, y in enumerate(listRegion):
             screenShot(y)
         uploadData(idi)

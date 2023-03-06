@@ -1,6 +1,17 @@
 import mysql.connector
 import coordinate as co
 
+mydb = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="",
+    database="dofus_500"
+)
+mycursor = mydb.cursor()
+
+#ne pas mettre de characters spéciaux ou d'accents
+listName = ['Ailes de Moskito', 'Aile de Bourdard', ]
+
 
 if co.multiX == 2560 and co.multiY == 1440:
     regionScreen = {"1": (1250, 336), "10": (1250, 400), "100": (
@@ -18,20 +29,11 @@ elif co.multiX == 1920 and co.multiY == 1200:
     dimensionScreenNom = co.Coordinate(255, 33)
 
 
-mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="",
-    database="dofus_500"
-)
-mycursor = mydb.cursor()
-
 count = 0
 color = 0
 
 
 dataKamas = []
-listName = ['Ailes de Moskito', 'Aile de Bourdard', ]
 
 noSpaceListName = []
 # creation noSpaceListName
