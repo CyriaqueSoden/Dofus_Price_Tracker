@@ -1,13 +1,13 @@
-#Dofus Price Tracker
+# Dofus Price Tracker
 
 Ce projet est un bot pour le jeu Dofus. Il permet de suivre les prix des objets dans le marché.
 
-##Prérequis
+## Prérequis
 
 -Python 3.x
 -Tesseract OCR : https://github.com/UB-Mannheim/tesseract/wiki
 
-##Installation et mise en place
+## Installation et mise en place
 
 -Clonez le repository
 -Installez les bibliothèques Python avec la commande pip install -r requirements.txt
