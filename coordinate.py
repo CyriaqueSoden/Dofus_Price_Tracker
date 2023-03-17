@@ -21,7 +21,11 @@ class Coordinate:
         return (self.x, self.y)
 
     def getRegOcrNumber(self):
-        return (self.x - 170, self.y)
+
+        if multiX == 2560 and multiY == 1440:
+            return (self.x - 170, self.y)
+        else:
+            return (self.x - 122, self.y)
 
     def reset(self):
         self.x = self.defX
