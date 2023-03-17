@@ -9,7 +9,7 @@ mydb = mysql.connector.connect(
 )
 mycursor = mydb.cursor()
 
-#ne pas mettre de characters spéciaux ou d'accents
+# ne pas mettre de characters spéciaux ou d'accents
 listName = ['Ailes de Moskito', 'Aile de Bourdard', ]
 
 
