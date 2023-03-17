@@ -2,6 +2,8 @@
 
 Ce projet est un bot pour le jeu Dofus. Il permet de suivre les prix des objets dans le marché.
 
+https://user-images.githubusercontent.com/73218277/225859056-25625c27-fed4-4933-8cb5-a8ff656af1c1.mp4
+
 ## Prérequis
 
 - Python 3.x
@@ -12,13 +14,14 @@ Ce projet est un bot pour le jeu Dofus. Il permet de suivre les prix des objets 
 - Clonez le repository
 - Installez les bibliothèques Python avec la commande pip install -r requirements.txt
 - Créé une base de donnée MySQL
-- Dans le fichier config.py mettez les informations de votre base de donnée (4-9) ainsi que les objets que vous souhaitez suivre (13)
+- Dans le fichier config.py mettez les informations de votre base de donnée ainsi que les objets que vous souhaitez suivre
 - Lancez le fichier db.py avec la commande python db.py
 - Changer les coordonées si nécessaire (voir [Coordonnées](#coordonnées))
 
 # Utilisation
 
 Mettre Dofus en plein écran (nécessaire seulement avec les coordonnées que j'ai fait) ,lancer main.py et attendre que le programme boucle sur tous les items de la liste.
+(J'ai testé dans l'hdv des runes et des ressources , ca ne marchera pas dans un hdv qui utilise un autre formet ex : hdv des équipements)
 
 # Coordonnées
 
