@@ -1,7 +1,9 @@
 # Dofus Price Tracker
 
 Ce projet est un bot pour le jeu Dofus. Il permet de suivre les prix des objets dans le marché.
-https://user-images.githubusercontent.com/73218277/225859056-25625c27-fed4-4933-8cb5-a8ff656af1c1.mp4
+
+![4p9p4o](https://user-images.githubusercontent.com/73218277/225859056-25625c27-fed4-4933-8cb5-a8ff656af1c1.mp4)
+
 ## Prérequis
 
 - Python 3.x
