@@ -9,8 +9,8 @@ mydb = mysql.connector.connect(
 )
 mycursor = mydb.cursor()
 
-# ne pas mettre de characters spéciaux ou d'accents
-listName = ['Ailes de Moskito', 'Aile de Bourdard', 'bois de kaerlier']
+# ne pas mettre de characters spéciaux ou d'accents 'Ailes de Moskito', , 'bois de kaerlier'
+listName = ['ble']
 
 
 if co.multiX == 2560 and co.multiY == 1440:

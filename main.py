@@ -1,3 +1,4 @@
+from unidecode import unidecode
 import re
 from data import *
 from PIL import Image
@@ -71,7 +72,7 @@ def isItRightItem(i):
         im = pyautogui.screenshot(
             region=(*listCoo["openItem"].getCoordinates(), *dimensionScreenNom.getCoordinates()))
         analyse = pytesseract.image_to_string(im)
-        if analyse.lower().strip() == i.lower().strip():
+        if unidecode(analyse.lower().strip()) == i.lower().strip():
             return
         listCoo["openItem"].next()
         for y in listRegion:
