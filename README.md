@@ -19,6 +19,7 @@ Ce projet est un bot pour le jeu Dofus. Il permet de suivre les prix des objets 
 # Utilisation
 
 Mettre Dofus en plein écran (nécessaire seulement avec les coordonnées que j'ai fait) ,lancer main.py et attendre que le programme boucle sur tous les items de la liste.
+(J'ai testé dans l'hdv des runes et des ressources , ca ne marchera pas dans un hdv qui utilise un autre formet ex : hdv des équipements)
 
 # Coordonnées
 
