@@ -2,6 +2,10 @@
 
 Ce projet est un bot pour le jeu Dofus. Il permet de suivre les prix des objets dans le marché.
 
+https://user-images.githubusercontent.com/73218277/226289755-9492adc4-cec0-4e0a-b73b-cbb51665a396.mp4
+
+
+
 ## Prérequis
 
 - Python 3.x
