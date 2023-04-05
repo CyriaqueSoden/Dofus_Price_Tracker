@@ -28,4 +28,4 @@ Mettre Dofus en plein écran (nécessaire seulement avec les coordonnées que j'
 # Coordonnées
 
 Les coordonnées sont les pixels sur les quels le bot clique ou prend des screenshots. Etant donnée que la position de l'hud de dofus ne change pas de facon proportionnel a la résolution de l'écran(du moins d'apres mes tests) il faut les definire a la mains. Je l'ai fait pour 2 écrans 2560x1440 et 1920x1200.
-Deja que pour moi c'était giga chiant alors que je sais a quoi chaque coordonnées correspondents alors pour quelqu'un qui essaie de lire le fichier main HF.
+
